@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Tech Demo: Map</title>
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+	<script src="https://use.typekit.net/tkz2stq.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="/css/animate.css">
+	<link rel="stylesheet" type="text/css" href="/css/mobile.css">
+	<script src='/js/jquery-3.2.0.min.js'></script>
+	<script src='/js/scripts.js'></script>
+</head>
+<body>
+	<div id="fullMap">
+		<div id="mapConsole">
+			<div id="permanentStuff">
+				<h1 id="flourish">BC Beer Map</h1>
+				<!-- <p class="float">Justin: Here's an updated tech demo of how the map is going to work.</p> -->
+				<button id="advOptBtn" onclick="toggleAdvanced()" type="button">Show Options&ensp;<i class="fa fa-chevron-circle-down"></i></button>
+			</div>
+		</div>
+		<div id="toggleableStuff" class="clearfix">
+			<div id="neighbor" class="areaMedium">
+				<div id="hoodsAll">
+					<h3>Neighborhoods</h3>
+					<div class="checkBox">
+						<input type="checkbox" class="metricsSwith tgl tgl-flip" name="allTgl" id="allTgl" checked>
+						<label class="tgl-btn" data-tg-off="All" data-tg-on="All" for="allTgl"></label>
+					</div>
+				</div>
+				<div>
+					
+				</div>
+			</div>
+			<div id="metrics" class="areaMedium">
+				<h3>Metrics</h3>
+				<div id="quality" class="togglerMetric clearfix">
+					<h4>Qualtiy</h4>
+					<select id="expDrp" name="expDrp" class="metricsWeight" onChange="inputChanged()">
+						<option value="1">5 Points</option>
+						<option value="2">10 Points</option>
+						<option value="3">15 Points</option>
+						<option value="4" selected="selected">20 Points</option>
+						<option value="5">25 Points</option>
+						<option value="6">30 Points</option>
+						<option value="7">35 Points</option>
+						<option value="8">40 Points</option>
+						<option value="9">45 Points</option>
+						<option value="10">50 Points</option>
+					</select>
+					<div class="checkBox">
+						<input type="checkbox" class="metricsSwith tgl tgl-light" name="qltyTgl" id="qltyTgl" checked data-dropdown="qltyDrp" onchange="metricToggled()">
+						<label class="tgl-btn" data-tg-off="" data-tg-on="X" for="qltyTgl"></label>
+					</div>
+				</div>
+				<div id="standout" class="togglerMetric clearfix">
+					<h4>Standout</h4>
+					<select id="expDrp" name="expDrp" class="metricsWeight" onChange="inputChanged()">
+						<option value="1" selected="selected">5 Points</option>
+						<option value="2">10 Points</option>
+						<option value="3">15 Points</option>
+						<option value="4">20 Points</option>
+						<option value="5">25 Points</option>
+						<option value="6">30 Points</option>
+						<option value="7">35 Points</option>
+						<option value="8">40 Points</option>
+						<option value="9">45 Points</option>
+						<option value="10">50 Points</option>
+					</select>
+					<div class="checkBox">
+						<input type="checkbox" class="metricsSwith tgl tgl-light" name="standTgl" id="standTgl" checked>
+						<label class="tgl-btn" data-tg-off="" data-tg-on="X" for="standTgl"></label>
+					</div>
+				</div>
+				<div id="diversity" class="togglerMetric clearfix">
+					<h4>Diversity</h4>
+					<select id="expDrp" name="expDrp" class="metricsWeight" onChange="inputChanged()">
+						<option value="1">5 Points</option>
+						<option value="2" selected="selected">10 Points</option>
+						<option value="3">15 Points</option>
+						<option value="4">20 Points</option>
+						<option value="5">25 Points</option>
+						<option value="6">30 Points</option>
+						<option value="7">35 Points</option>
+						<option value="8">40 Points</option>
+						<option value="9">45 Points</option>
+						<option value="10">50 Points</option>
+					</select>
+					<div class="checkBox">
+						<input type="checkbox" class="metricsSwith tgl tgl-light" name="diverTgl" id="diverTgl" checked>
+						<label class="tgl-btn" data-tg-off="" data-tg-on="X" for="diverTgl"></label>
+					</div>
+				</div>
+				<div id="innovation" class="togglerMetric clearfix">
+					<h4>Innovation</h4>
+					<select id="expDrp" name="expDrp" class="metricsWeight" onChange="inputChanged()">
+						<option value="1" selected="selected">5 Points</option>
+						<option value="2">10 Points</option>
+						<option value="3">15 Points</option>
+						<option value="4">20 Points</option>
+						<option value="5">25 Points</option>
+						<option value="6">30 Points</option>
+						<option value="7">35 Points</option>
+						<option value="8">40 Points</option>
+						<option value="9">45 Points</option>
+						<option value="10">50 Points</option>
+					</select>
+					<div class="checkBox">
+						<input type="checkbox" class="metricsSwith tgl tgl-light" name="innoTgl" id="innoTgl" checked>
+						<label class="tgl-btn" data-tg-off="" data-tg-on="X" for="innoTgl"></label>
+					</div>
+				</div>
+				<div id="experience" class="togglerMetric clearfix">
+					<h4>Experience</h4>
+					<select id="expDrp" name="expDrp" class="metricsWeight" onChange="inputChanged()">
+						<option value="1">5 Points</option>
+						<option value="2" selected="selected">10 Points</option>
+						<option value="3">15 Points</option>
+						<option value="4">20 Points</option>
+						<option value="5">25 Points</option>
+						<option value="6">30 Points</option>
+						<option value="7">35 Points</option>
+						<option value="8">40 Points</option>
+						<option value="9">45 Points</option>
+						<option value="10">50 Points</option>
+					</select>
+					<div class="checkBox">
+						<input type="checkbox" class="metricsSwith tgl tgl-light" name="expTgl" id="expTgl" checked>
+						<label class="tgl-btn" data-tg-off="" data-tg-on="X" for="expTgl"></label>
+					</div>
+				</div>
+			</div>
+			<div id="etc" class="areaMedium">
+				<h3>Etc</h3>
+				<div id="food" class="inlineArea togglerMetric clearfix">
+					<h4>Must have food</h4>
+					<div class="checkBox">
+						<input type="checkbox" class="tgl tgl-flip" name="foodTgl" id="foodTgl">
+						<label class="tgl-btn" data-tg-off="Nah" data-tg-on="Yes!!!" for="foodTgl"></label>
+					</div>
+				</div>
+				<div id="reviewed" class="inlineArea togglerMetric clearfix">
+					<h4>Must be reviewed</h4>
+					<div class="checkBox">
+						<input type="checkbox" class="tgl tgl-flip" name="revTgl" id="revTgl" checked>
+						<label class="tgl-btn" data-tg-off="Nah" data-tg-on="Yes!!!" for="revTgl"></label>
+					</div>
+				</div>
+			</div>
+			<div id="apply" class="areaSmall">
+				<button id="applyFilters" onclick="applyFilter()" type="button" disabled>Apply!</button>
+			</div>
+		</div>
+		<div id="mapArea">
+			
+		</div>
+	</div>
+	<div class="backdrop">
+		<div class="box">
+			<!-- <div class="close">x</div> -->
+			<span class="close">x</span>
+		</div><!-- box -->		
+	</div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBA-kRroSpi9LN713Lns7W6bcevLlndjf8&callback=initMap"
+    async defer></script>
+</body>
+</html>

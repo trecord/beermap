@@ -1,0 +1,24 @@
+@media only screen and (max-width : 1024px){
+	#toggleableStuff{
+		flex-wrap: wrap;
+	}
+	#toggleableStuff > div {
+		min-width: 320px;
+	}
+}
+@media only screen and (max-width : 767px){
+	body{
+		font-size: 16px;
+	}
+	#advOptBtn{
+		font-size: 1rem
+	}
+	#flourish{
+		font-size: 1.7rem;
+	}
+}
+@media only screen and (max-width : 373px){
+	body{
+		font-size: 14px;
+	}
+}

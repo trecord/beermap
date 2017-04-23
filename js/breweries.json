@@ -1,0 +1,100 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties":  {
+       "name": "Fuggles & Warlock",
+       "website":"http://fuggleswarlock.com/",
+       "hours":"M-Sun, 11-7/9",
+       "address":"11220 Horseshoe Way, V7A 5H7",
+       "city":"Richmond",
+       "location":"Fraser River",
+       "description":"Tasting Room",
+       "tastingArea":true,
+       "food":false,
+       "reviews": 8,
+       "deviation": 3.732,
+       "quality": 0.46,
+       "standout": 0.46,
+       "diversity": 0.39,
+       "innovation": 0.36,
+       "experience": 0.51
+     },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.095434,
+          49.1294361
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties":  {
+         "name": "Brassneck Brewery",
+         "website":"http://brassneck.ca/",
+         "hours":"M-Sun 2-11pm",
+         "address":"2148 Main St, V5T 3C5",
+         "city":"Vancouver",
+         "location":"Mt. Pleasant",
+         "description":"Tasting Room",
+         "tastingArea":true,
+         "food":false,
+         "reviews": 10,
+         "deviation": 2.239,
+         "quality": 0.86,
+         "standout": 0.87,
+         "diversity": 0.76,
+         "innovation": 0.74,
+         "experience": 0.83
+       },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.1026346,
+          49.2657669
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+         "name": "Four Winds Brewing",
+         "website":"http://fourwindsbrewing.ca/",
+         "hours":"M-Sun 11am-7pm",
+         "address":"7355 72 St, V4G 1L5",
+         "city":"Delta",
+         "location":"Delta",
+         "description":"Tasting Room",
+         "tastingArea":true,
+         "food":true,
+         "reviews": 8,
+         "deviation": 1.823,
+         "quality": 0.57,
+         "standout": 0.56,
+         "diversity": 0.45,
+         "innovation": 0.49,
+         "experience": 0.44
+       },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.026466,
+          49.136309
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.10721397399902,
+          49.26920469603747
+        ]
+      }
+    }
+  ]
+}
