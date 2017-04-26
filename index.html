@@ -10,7 +10,9 @@
 	<link rel="stylesheet" type="text/css" href="/css/styles.css">
 	<link rel="stylesheet" type="text/css" href="/css/animate.css">
 	<link rel="stylesheet" type="text/css" href="/css/mobile.css">
-	<script src='/js/jquery-3.2.0.min.js'></script>
+	<!-- <script src='/js/jquery-3.2.0.min.js'></script> -->
+	<script src='/js/vue.js'></script>
+	<script src='/js/mapSetup.js'></script>
 	<script src='/js/scripts.js'></script>
 </head>
 <body>
@@ -19,19 +21,19 @@
 			<div id="permanentStuff">
 				<h1 id="flourish">BC Beer Map</h1>
 				<!-- <p class="float">Justin: Here's an updated tech demo of how the map is going to work.</p> -->
-				<button id="advOptBtn" onclick="toggleAdvanced()" type="button">Show Options&ensp;<i class="fa fa-chevron-circle-down"></i></button>
+				<button id="advOptBtn" v-on:click="toggleAdvanced" type="button">{{advButtonText}}</button>
 			</div>
 		</div>
-		<div id="toggleableStuff" class="clearfix">
+		<div id="toggleableStuff" v-if="advToggled" class="clearfix">
 			<div id="neighbor" class="areaMedium">
-				<div id="hoodsAll">
+				<div id="hoodsAll" class="togglerMetric">
 					<h3>Neighborhoods</h3>
 					<div class="checkBox">
 						<input type="checkbox" class="metricsSwith tgl tgl-flip" name="allTgl" id="allTgl" checked>
 						<label class="tgl-btn" data-tg-off="All" data-tg-on="All" for="allTgl"></label>
 					</div>
 				</div>
-				<div>
+				<div class="togglerMetric clearfix">
 					
 				</div>
 			</div>

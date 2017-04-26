@@ -172,6 +172,9 @@ textarea, input, button { outline: none; }
 	padding:1rem 0 0;
 	display: flex;
 }
+.togglerMetric h4, .togglerMetric h3{
+	flex-grow: 1;
+}
 .checkBox{
 	vertical-align: middle;
 	display: inline-block;
